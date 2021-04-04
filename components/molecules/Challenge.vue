@@ -62,6 +62,12 @@ export default Vue.extend<unknown, any, unknown, ChallengeType>({
     challengeSucceeded() {
       this.resetChallenges();
       this.completeChallenge(this.amount);
+
+      this.$cookiz.set("movapp", {
+        level: this.level,
+        xp: this.xp,
+        completedChallenges: this.completedChallenges
+      });
     }
   }
 });
